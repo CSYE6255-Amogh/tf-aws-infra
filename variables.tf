@@ -1,7 +1,8 @@
 variable "aws_profile" {
   description = "AWS profile to use"
   type        = string
-  default     = "demo"
+  default     = "dev"
+  
 }
 variable "aws_region" {
   description = "AWS region to use"
@@ -12,7 +13,7 @@ variable "aws_region" {
 variable "vpc_name" {
   description = "Name of the VPC"
   type        = string
-  default     = "my-vpc-new"
+  default     = "my-vpc"
 
 }
 
