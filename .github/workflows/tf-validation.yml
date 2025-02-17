@@ -1,0 +1,34 @@
+name: Terraform Format and Validate
+
+on:
+  pull_request:
+    branches: 
+      - main
+
+env:
+  TF_VERSION: 1.6.6
+
+jobs:
+  validate:
+    name: Validate Terraform
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive -diff
+
+      - name: Terraform Init
+        run: terraform init 
+      
+      - name: Terraform Validate
+        run: terraform validate
