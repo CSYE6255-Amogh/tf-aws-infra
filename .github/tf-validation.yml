@@ -1,0 +1,38 @@
+name: Terraform Format and Validate
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**.tf'
+      - '**.tfvars'
+
+env:
+  TF_VERSION: 1.6.6
+
+jobs:
+  validate:
+    name: Validate Terraform
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive -diff
+        env:
+          TF_CLI_ARGS: -no-color
+
+      - name: Terraform Validate
+        run: |
+          find . -type f -name '*.tf' -exec dirname {} \; \
+            | sort -u \
+            | xargs -I{} terraform -chdir={} validate
