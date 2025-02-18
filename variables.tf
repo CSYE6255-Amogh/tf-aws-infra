@@ -7,6 +7,7 @@ variable "aws_region" {
   description = "AWS region to use"
   type        = string
   default     = "us-east-1"
+  
 }
 
 variable "vpc_name" {
@@ -36,6 +37,11 @@ variable "public_subnet_name" {
 
 }
 
+variable "destination_public_cidr" {
+  description = "Destination CIDR block for the public route"
+  type        = string
+  default     = "0.0.0.0/0"
+}
 variable "private_subnet_name" {
   description = "Name of the private subnets"
   type        = string
