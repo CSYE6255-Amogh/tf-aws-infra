@@ -16,6 +16,8 @@ Creates a highly available AWS network infrastructure with:
 - 3 Private Subnets (across 3 AZs)
 - Internet Gateway
 - Route Tables with proper associations
+-  Security Group for Web Application
+- EC2 Instance in Public Subnet
 
 Enforces CI checks via GitHub Actions:
 - Terraform formatting validation
