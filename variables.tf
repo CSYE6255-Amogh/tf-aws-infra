@@ -66,3 +66,37 @@ variable "azs" {
   type        = list(string)
   default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
+
+variable "aws_ami_id" {
+  description = "AMI ID for the EC2 instance"
+  type        = string
+  default     = "ami-06324aa64daedd8de"
+
+}
+
+variable "aws_instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "aws_key_name" {
+  description = "Name of the key pair to use for SSH access"
+  type        = string
+  default     = "devkey"
+
+}
+
+variable "aws_volume_size" {
+  description = "Size of the root volume in GB"
+  type        = number
+  default     = 25
+
+}
+
+variable "aws_volume_type" {
+  description = "Type of the root volume"
+  type        = string
+  default     = "gp2"
+
+}
