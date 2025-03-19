@@ -70,7 +70,7 @@ variable "azs" {
 variable "aws_ami_id" {
   description = "AMI ID for the EC2 instance"
   type        = string
-  default     = "ami-06324aa64daedd8de"
+  default     = "ami-0de45f046b679632e"
 
 }
 
@@ -98,5 +98,32 @@ variable "aws_volume_type" {
   description = "Type of the root volume"
   type        = string
   default     = "gp2"
+
+}
+
+variable "s3_bucket_prefix" {
+  description = "Prefix for the S3 bucket name (UUID will be appended)"
+  default     = "webapp-bucket"
+}
+
+
+
+variable "DB_USERNAME" {
+  description = "Database username"
+  type        = string
+  default     = "csye6225"
+
+}
+
+variable "DB_NAME" {
+  description = "Database name"
+  type        = string
+  default     = "csye6225"
+
+}
+
+variable "DB_PASSWORD" {
+  description = "Database password"
+  type        = string
 
 }
