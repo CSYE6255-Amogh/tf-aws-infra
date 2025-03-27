@@ -70,7 +70,7 @@ variable "azs" {
 variable "aws_ami_id" {
   description = "AMI ID for the EC2 instance"
   type        = string
-  default     = "ami-0de45f046b679632e"
+  default     = "ami-095427c88bfb0b00e"
 
 }
 
