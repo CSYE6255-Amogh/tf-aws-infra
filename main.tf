@@ -432,7 +432,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu_alarm" {
   namespace           = "AWS/EC2"
   period              = 60
   statistic           = "Average"
-  threshold           = 35
+  threshold           = var.upscale_threshold
   alarm_description   = "Triggers when average CPU > 35%"
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.webapp_asg.name
@@ -457,7 +457,7 @@ resource "aws_cloudwatch_metric_alarm" "low_cpu_alarm" {
   namespace           = "AWS/EC2"
   period              = 60
   statistic           = "Average"
-  threshold           = 20
+  threshold           = var.downscale_threshold
   alarm_description   = "Triggers when average CPU < 20%"
   dimensions = {
     AutoScalingGroupName = aws_autoscaling_group.webapp_asg.name
