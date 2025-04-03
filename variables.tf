@@ -127,3 +127,8 @@ variable "DB_PASSWORD" {
   type        = string
 
 }
+variable "subdomain_env" {
+  description = "Subdomain environment (dev or demo)"
+  type        = string
+  default     = "dev" # Or "demo", depending on context
+}
