@@ -137,12 +137,12 @@ variable "upscale_threshold" {
   description = "Threshold for scaling up"
   type        = number
   default     = 37
-  
+
 }
 
 variable "downscale_threshold" {
   description = "Threshold for scaling down"
   type        = number
   default     = 32
-  
+
 }
