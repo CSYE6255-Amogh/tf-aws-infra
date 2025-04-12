@@ -122,11 +122,11 @@ variable "DB_NAME" {
 
 }
 
-variable "DB_PASSWORD" {
-  description = "Database password"
-  type        = string
+# variable "DB_PASSWORD" {
+#   description = "Database password"
+#   type        = string
 
-}
+# }
 variable "subdomain_env" {
   description = "Subdomain environment (dev or demo)"
   type        = string
@@ -144,5 +144,12 @@ variable "downscale_threshold" {
   description = "Threshold for scaling down"
   type        = number
   default     = 32
+
+}
+
+variable "demo_cert_arn" {
+  description = "Certificate ARN for demo environment"
+  type        = string
+  default     = "arn:aws:acm:us-east-1:418272763068:certificate/ae2ff52c-77ed-4c30-ad76-1e05d40e650d"
 
 }
